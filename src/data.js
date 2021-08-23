@@ -511,3 +511,4 @@ export const data = [
     Response: 'True'
   }
 ];
+export default data;
