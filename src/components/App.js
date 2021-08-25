@@ -4,10 +4,29 @@ import Navbar  from './Navbar';
 import MovieCard from './MovieCard';
 import {data} from '../data';
 
-function App() {
-  alert=()=>{
-    console.log("log ");
+
+
+class App extends React.Component {
+  componentDidMount(){
+    //make api call
+    //dispatch action
+    const {store} = this.props
+    store.subscribe(
+      ()=>{
+        console.log('updated')
+        this.forceUpdate();
+        //force update is not good idea
+      }
+    )
+    store.dispatch(
+      {
+        type:'ADD_MOVIES',
+        movies:data
+      }
+    )
   }
+  render(){
+  const mvs=this.props.store.getState()
   return (
     <div className="App">
       <Navbar/>
@@ -17,12 +36,19 @@ function App() {
           <div className="tab">Favourites</div>
         </div>
         <div className="list">
-          {alert()}
-        {
-          data.map((movie)=>
+         
+        {/* {
+          data.map((movie,index)=>
           {
             
-            return <MovieCard movie={movie}/>
+            return <MovieCard movie={movie} key={(index)}/>
+          })
+        } */
+        
+          mvs.map((movie,index)=>
+          {
+            
+            return <MovieCard movie={movie} key={(index)}/>
           })
         }
         </div>
@@ -30,6 +56,7 @@ function App() {
       
     </div>
   );
+      }
 }
 
 export default App;
