@@ -45,16 +45,16 @@ class App extends React.Component {
     this.props.store.dispatch(setFav(value))
   }
   render(){
-    const {list,favourites,setFav} = this.props.store.getState();
+    const {list,favourites,showFav} = this.props.store.getState();
   //{list:[],fav:[]}
-   const display= setFav ? favourites:list;
+   const display= showFav ? favourites:list;
   return (
     <div className="App">
       <Navbar/>
       <div className="main">
         <div className="tabs">
-          <div className={`tab ${setFav ? '' : 'active-tabs' }`} onClick={()=>this.onChangeTab(false)} >Movies</div>
-          <div className={`tab ${setFav ? 'active-tabs':'' }`} onClick={()=>this.onChangeTab(true)} >Favourites</div>
+          <div className={`tab ${showFav ? '' : 'active-tabs' }`} onClick={()=>this.onChangeTab(false)} >Movies</div>
+          <div className={`tab ${showFav ? 'active-tabs':'' }`} onClick={()=>this.onChangeTab(true)} >Favourites</div>
         </div>
         
         <div className="list">
