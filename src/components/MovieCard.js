@@ -14,12 +14,11 @@ class MovieCard extends React.Component{
   }
     render(){
         const { movie,isFavourite }= this.props;
-      
+        
       
         return(
             <div className="movie-card">
-                <div className="left">
-                    <img src={movie.Poster} alt="" />
+                <div className="left"><img src={movie.Poster} alt="" />
 
                 </div>
                 <div className="right">

@@ -6,7 +6,7 @@ import {data} from '../data';
 import { addmovies,addfav, setFav } from '../actions';
 
 
-
+import About from './About'
 class App extends React.Component {
   componentDidMount(){
     //make api call
@@ -49,12 +49,13 @@ class App extends React.Component {
   //{list:[],fav:[]}
    const display= showFav ? favourites:list;
   return (
+    
     <div className="App">
       <Navbar/>
       <div className="main">
         <div className="tabs">
           <div className={`tab ${showFav ? '' : 'active-tabs' }`} onClick={()=>this.onChangeTab(false)} >Movies</div>
-          <div className={`tab ${showFav ? 'active-tabs':'' }`} onClick={()=>this.onChangeTab(true)} >Favourites</div>
+          <div className={`tab ${showFav   ? 'active-tabs':'' }`} onClick={()=>this.onChangeTab(true)} >Favourites</div>
         </div>
         
         <div className="list">
@@ -77,6 +78,9 @@ class App extends React.Component {
       </div>
       
     </div>
+
+
+
   );
       
       

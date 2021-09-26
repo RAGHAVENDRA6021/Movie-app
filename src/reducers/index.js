@@ -6,7 +6,7 @@ const initialMovieState={
 }
 export default function movies(state=initialMovieState,action){
    
-    if(action.type===ADD_MOVIES){
+if(action.type===ADD_MOVIES){
         return {
             ...state,
             list:action.movies

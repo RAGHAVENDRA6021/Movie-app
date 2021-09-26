@@ -22,7 +22,7 @@ export function addmovies(movies){
 export function addfav(movie){
     return{
         type:ADD_FAV,
-        movie
+    movie
     }
 }
 export function removeFav(movie){
