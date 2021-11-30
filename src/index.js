@@ -4,7 +4,8 @@ import './index.css';
 import App from './components/App';
 import {createStore} from 'redux';
 import movies from './reducers'
-
+import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom'
+import OpenPage from './OpenPage';
 
 const store=createStore(movies);
 /* console.log('store',store)
@@ -16,9 +17,15 @@ store.dispatch({
 });
 console.log('after state',store.getState()) */
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
+    <Switch><Route path="/" exact component={OpenPage}/>
+    <Route path="/project" >
     <App  store={store}/>
-  </React.StrictMode>,
+    </Route></Switch>
+    
+    
+    
+  </Router>,
   document.getElementById('root')
 );
 

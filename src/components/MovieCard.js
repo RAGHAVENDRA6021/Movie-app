@@ -1,5 +1,6 @@
 import React from 'react';
 import { addfav,removeFav } from '../actions';
+import ReadMore from './ReadMore';
 
 
 class MovieCard extends React.Component{
@@ -23,7 +24,7 @@ class MovieCard extends React.Component{
                 </div>
                 <div className="right">
                     <div className="title">{movie.Title}</div>
-                    <div className="plot">{movie.Plot}</div>
+                    <div className="plot"><ReadMore data= {movie.Plot}/></div>
                     <div className="footer">
                         <div className="rating">
                             {movie.imdbRating}
