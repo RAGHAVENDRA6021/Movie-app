@@ -20,7 +20,7 @@ ReactDOM.render(
   
   <Router>
  
-    <Switch><Route path="/Movie-app/" exact
+    <Switch><Route path="/" exact
     component={OpenPage}/>
     <Route path="/project" >
     <App  store={store}/>
