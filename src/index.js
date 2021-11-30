@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App';
 import {createStore} from 'redux';
 import movies from './reducers'
-import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom'
+import {HashRouter as Router,Route,Link,Switch} from 'react-router-dom'
 import OpenPage from './OpenPage';
 
 const store=createStore(movies);
@@ -18,10 +18,9 @@ store.dispatch({
 console.log('after state',store.getState()) */
 ReactDOM.render(
   
-  <Router>
+  <Router basename="/">
  
-    <Switch><Route path="/" exact
-    component={OpenPage}/>
+    <Switch><Route path="/"  exact component={OpenPage}/>
     <Route path="/project" >
     <App  store={store}/>
     </Route></Switch>
