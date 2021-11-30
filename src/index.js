@@ -19,7 +19,7 @@ console.log('after state',store.getState()) */
 ReactDOM.render(
   
   <Router>
-    <OpenPage/>
+ 
     <Switch><Route path="/Movie-app/"  component={OpenPage}/>
     <Route path="/project" >
     <App  store={store}/>
