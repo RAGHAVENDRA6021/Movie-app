@@ -17,8 +17,10 @@ store.dispatch({
 });
 console.log('after state',store.getState()) */
 ReactDOM.render(
+  
   <Router>
-    <Switch><Route path="/Movie-app/" exact component={OpenPage}/>
+    <OpenPage/>
+    <Switch><Route path="/Movie-app/"  component={OpenPage}/>
     <Route path="/project" >
     <App  store={store}/>
     </Route></Switch>
